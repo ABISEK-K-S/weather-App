@@ -23,6 +23,7 @@ export const getLocationData = (data) => async (dispatch) => {
   axios
     .request(requestData)
     .then(function (response) {
+      // weather response data are stored as weatherReports
       let weatherReports = {
         name: response.data.name,
         temp: response.data.main.temp,

@@ -41,27 +41,32 @@ function Weather(props) {
     "Lakshadweep",
     "Puducherry"
   ];
+
+  //by default first state name from the list is choosen
   const initialData = () => {
     props.getLocationData(state[0]);
     return state[0];
   };
   const [selectedState, setState] = useState(initialData);
+
+  //user choosen state is stored and passed to action for getting the weather data
   const handleChange = () => {
     const value = document.getElementById("weather").value;
     setState(value);
     props.getLocationData(value);
   };
+
+  //to show the available state names in the dropdown
   const time = state.map((key) => {
     return <option>{key}</option>;
   });
+
   return (
     <div className="row row-mobile  ">
       Weather
       <div className="shadow p-3 mb-5 bg-white rounded">
         <form className="row justify-content-center ">
-          <span className=" row justify-content-center input">
-            Select state
-          </span>
+          <span className=" row justify-content-center">Select state</span>
           <select
             className="w-100 select_state"
             id="weather"
@@ -71,7 +76,6 @@ function Weather(props) {
             {time}
           </select>
         </form>
-
         <div class="row justify-content-center  mb-5 mt-3 rounded weather_result">
           <div class="col-3 text-center">
             Temperature

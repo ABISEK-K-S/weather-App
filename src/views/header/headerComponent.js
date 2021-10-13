@@ -3,7 +3,7 @@ import moment from "moment-timezone";
 import image from "../../assets/images/user-icon.png"
 
 function Header() {
-  let current_time = moment().format("ddd D MMM h:mm A");
+  let current_time = moment().format("ddd D MMM h:mm A");//used moment for formatting date and time
 
   return (
     <div>
