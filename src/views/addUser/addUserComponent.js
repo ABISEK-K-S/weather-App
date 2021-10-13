@@ -36,15 +36,17 @@ const AddUser = () => (
         }
         return errors;
       }}
-      onSubmit={(e) => {
+      onSubmit={(e, { resetForm }) => {
         let previousData = localStorage.getItem("userData");
         if (previousData) {
           let array = [];
           array.push(previousData);
           array.push(JSON.stringify(e));
           localStorage.setItem("userData", array);
+          resetForm();
         } else {
           localStorage.setItem("userData", JSON.stringify(e));
+          resetForm();
         }
       }}
       render={(props) => (
@@ -52,7 +54,6 @@ const AddUser = () => (
           onSubmit={(e) => {
             e.preventDefault();
             props.handleSubmit();
-            props.resetForm();
           }}
           className="shadow p-3 mb-5 bg-white rounded lh-lg row justify-content-center"
         >
