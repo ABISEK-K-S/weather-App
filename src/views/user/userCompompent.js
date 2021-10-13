@@ -7,7 +7,7 @@ function UserComponent() {
     <div>
       Users
       <div className="shadow p-3 mb-5 mt-3 bg-white rounded">
-        <form onClick={(e) => alert("abisek")}>
+        <form>
           <div class="  col col-5 form-group mb-4">
             Search
             <input
