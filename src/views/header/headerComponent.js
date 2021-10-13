@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment-timezone";
+import image from "../../assets/images/user-icon.png"
 
 function Header() {
   let current_time = moment().format("ddd D MMM h:mm A");
@@ -11,7 +12,7 @@ function Header() {
           <div class="col">{current_time}</div>
           <div class="col align-position">
             <span>Welcome John </span>
-            <img src={require("../../assets/images/user-icon.png")} />
+            <img src={image} />
           </div>
         </div>
       </div>

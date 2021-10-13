@@ -1,8 +1,9 @@
 import React from "react";
+import image from  "../../assets/images/user-icon.png"
+
 
 function UserComponent() {
   let data = localStorage.getItem("userData");
-  const image = require("../../assets/images/user-icon.png");
   return (
     <div>
       Users

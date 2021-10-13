@@ -22,6 +22,17 @@ input {
 .nav-link {
   color: black;
 }
+.nav-link:focus,
+.nav-link:active {
+  color: white;
+  background-color: #66ccff;
+  border: none;
+  border-radius: 0.5rem;
+}
+.nav-link:hover {
+  color: black;
+}
+
 .sidebar {
   height: 100%;
   width: 15%;
