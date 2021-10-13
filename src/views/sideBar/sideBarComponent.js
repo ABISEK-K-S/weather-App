@@ -17,7 +17,7 @@ function SideBar() {
             width="100"
             height="30"
           />
-          <hr className="my-2" style={{ backgroundColor: "#66ccff" }} />
+          <hr className="my-2 sidebar_background"/>
           <li class="nav-item">
             <Link to={"/add-user"} className="nav-link">
               <img src={image} />

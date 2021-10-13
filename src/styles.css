@@ -72,3 +72,6 @@ input {
   position: relative;
   left: 21px;
 }
+.sidebar_background{
+  background-color: #66ccff;
+}

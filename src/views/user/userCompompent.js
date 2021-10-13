@@ -2,7 +2,7 @@ import React from "react";
 import image from "../../assets/images/user-icon.png";
 
 function UserComponent(props) {
-  var data = JSON.parse(localStorage.getItem("userData"));
+  var data = JSON.parse(localStorage.getItem("userData")); //accessing data value from the local storage
   return (
     <div>
       Users
@@ -39,7 +39,12 @@ function UserComponent(props) {
                 );
               })
             ) : (
-              <a href="#" class="text-reset" onClick={e=>props.history.push("/add-user")}>
+              //if the user visit the user list page for the first time without enterting details in add user page
+              <a
+                href="#"
+                class="text-reset"
+                onClick={(e) => props.history.push("/add-user")}
+              >
                 {" "}
                 "Please click here to add User Details "
               </a>
@@ -57,14 +62,20 @@ function UserComponent(props) {
                 <li class="list-group-item border-bottom">
                   <img src={image} />
                   <span class="tabspace">
+                    {/* instead of age showing phone number in the second parameter (since age is unknown) */}
                     {key.name} - {key.phone} - {key.state}{" "}
-                    </span>
+                  </span>
                 </li>
               </ul>
             );
           })
         ) : (
-          <a href="#" class="text-reset" onClick={e=>props.history.push("/add-user")}>
+          //if the user visit the user list page for the first time without enterting details in add user page
+          <a
+            href="#"
+            class="text-reset"
+            onClick={(e) => props.history.push("/add-user")}
+          >
             {" "}
             "Please click here to add User Details "
           </a>
