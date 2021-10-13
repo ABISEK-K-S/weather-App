@@ -47,7 +47,7 @@ input {
   color: white;
 }
 .weather_result .measurements {
-  font-family: "Podcova";
+  font-family: "Podkova";
   display: flex;
   justify-content: center;
   font-size: 40px;

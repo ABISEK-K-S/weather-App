@@ -37,15 +37,20 @@ const AddUser = () => (
         return errors;
       }}
       onSubmit={(e, { resetForm }) => {
-        let previousData = localStorage.getItem("userData");
+        let previousData = JSON.parse(localStorage.getItem("userData"));
         if (previousData) {
           let array = [];
-          array.push(previousData);
-          array.push(JSON.stringify(e));
-          localStorage.setItem("userData", array);
+          previousData["collection"].map((key) => {
+            array.push(key);
+          });
+          array.push(e);
+          localStorage.setItem(
+            "userData",
+            JSON.stringify({ collection: array })
+          );
           resetForm();
         } else {
-          localStorage.setItem("userData", JSON.stringify(e));
+          localStorage.setItem("userData", JSON.stringify({ collection: [e] }));
           resetForm();
         }
       }}

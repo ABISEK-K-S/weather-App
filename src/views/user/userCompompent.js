@@ -1,9 +1,8 @@
 import React from "react";
-import image from  "../../assets/images/user-icon.png"
-
+import image from "../../assets/images/user-icon.png";
 
 function UserComponent() {
-  let data = localStorage.getItem("userData");
+  var data = JSON.parse(localStorage.getItem("userData"));
   return (
     <div>
       Users
@@ -22,52 +21,54 @@ function UserComponent() {
         <span> Card view</span>
         <br />
         <br />
-        <div class="card-group mb-5">
-          <div class="card shadow-none  bg-light rounded me-4">
-            <div class="col card-body">
-              <img src={image} />
-              <span class="tabspace">Username-Age-State</span>
-            </div>
-          </div>
-          <div class="card shadow-none  bg-light rounded me-4">
-            <div class="card-body">
-              <img src={image} />
-              <span class="tabspace">Username-Age-State</span>
-            </div>
-          </div>
-          <div class="card shadow-none  bg-light rounded me-4">
-            <div class="card-body">
-              <img src={image} />
-              <span class="tabspace">Username-Age-State</span>
-            </div>
+        <div class="container">
+          <div class="card-group">
+            {data && data["collection"] ? (
+              data["collection"].map((key) => {
+                return (
+                  <div class="card shadow-none  bg-light rounded m-2">
+                    <div class="card-body row ">
+                      <div class="col-6">
+                        <img src={image} width="50" height="50" class="mt-2" />
+                      </div>
+                      <span class="col-6 d-flex justify-content-center text-left">
+                        {key.name} {key.phone} {key.state}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <a href="/add-user" class="text-reset">
+                {" "}
+                "Please click here to add User Details "
+              </a>
+            )}
           </div>
         </div>
-        {/* <br /> */}
+        <br />
         <span> List view</span>
         <br />
         <br />
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <img src={image} />
-            <span class="tabspace">Username-Age-State</span>
-          </li>
-          <li class="list-group-item">
-            <img src={image} />
-            <span class="tabspace">Username-Age-State</span>
-          </li>
-          <li class="list-group-item">
-            <img src={image} />
-            <span class="tabspace">Username-Age-State</span>
-          </li>
-          <li class="list-group-item">
-            <img src={image} />
-            <span class="tabspace">Username-Age-State</span>
-          </li>
-          <li class="list-group-item">
-            <img src={image} />
-            <span class="tabspace">Username-Age-State</span>
-          </li>
-        </ul>
+        {data && data["collection"] ? (
+          data["collection"].map((key) => {
+            return (
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item border-bottom">
+                  <img src={image} />
+                  <span class="tabspace">
+                    {key.name} - {key.phone} - {key.state}{" "}
+                    </span>
+                </li>
+              </ul>
+            );
+          })
+        ) : (
+          <a href="/add-user" class="text-reset">
+            {" "}
+            "Please click here to add User Details "
+          </a>
+        )}
       </div>
     </div>
   );
