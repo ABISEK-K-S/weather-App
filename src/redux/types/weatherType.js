@@ -1,0 +1,3 @@
+export const WEATHER = {
+  UPDATE_WEATHER_INFO: "UPDATE_WEATHER_INFO"
+};

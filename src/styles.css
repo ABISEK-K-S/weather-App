@@ -1,0 +1,63 @@
+body {
+  background-color: #e8e8e8;
+}
+.select_state {
+  max-width: 250px;
+}
+input {
+  background-color: #f0f0f0;
+  max-width: 100%;
+  width: 150%;
+}
+.tabspace {
+  margin-left: 10px;
+}
+.sidebar .content {
+  margin-left: 10%;
+  margin-top: 10%;
+}
+.error {
+  color: red;
+}
+.nav-link {
+  color: black;
+}
+.sidebar {
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  top: 3%;
+}
+.align-position {
+  text-align: right;
+}
+.btn {
+  background-color: #66ccff;
+  color: white;
+}
+.weather_result .measurements {
+  font-family: "Podcova";
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+.weather_result {
+  font-size: 12px;
+  background-color: #66ccff;
+  color: white;
+  border: 10px;
+  margin-left: 10%;
+  max-width: 80%;
+  border-radius: 50px;
+  height: 50%;
+}
+.rounded {
+  border-radius: 1rem !important;
+}
+.rounded .border {
+  border-radius: 0.5rem !important;
+}
+.img_logo {
+  position: relative;
+  left: 21px;
+}
