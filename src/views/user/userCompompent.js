@@ -1,7 +1,7 @@
 import React from "react";
 import image from "../../assets/images/user-icon.png";
 
-function UserComponent() {
+function UserComponent(props) {
   var data = JSON.parse(localStorage.getItem("userData"));
   return (
     <div>
@@ -39,7 +39,7 @@ function UserComponent() {
                 );
               })
             ) : (
-              <a href="/add-user" class="text-reset">
+              <a href="#" class="text-reset" onClick={e=>props.history.push("/add-user")}>
                 {" "}
                 "Please click here to add User Details "
               </a>
@@ -64,7 +64,7 @@ function UserComponent() {
             );
           })
         ) : (
-          <a href="/add-user" class="text-reset">
+          <a href="#" class="text-reset" onClick={e=>props.history.push("/add-user")}>
             {" "}
             "Please click here to add User Details "
           </a>
